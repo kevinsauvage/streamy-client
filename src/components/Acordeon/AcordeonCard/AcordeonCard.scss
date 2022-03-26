@@ -1,0 +1,110 @@
+@import "../../../styles/mixins.scss";
+
+.AcordeonCard {
+  position: relative;
+  width: 33%;
+  height: 90vh;
+  flex-shrink: 0;
+  transition: All 0.3s ease;
+  margin: 2rem 0;
+  transform-style: preserve-3d;
+  opacity: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transform: rotateX(0deg) translateX(0px) rotateY(0deg) scale(1);
+
+
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: auto;
+
+    @include respond(mobile) {
+      width: 100%;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__detail {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
+    z-index: 999999;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+    background: rgba(39, 40, 41, 0.945);
+
+
+    @include respond(mobile) {
+      bottom: 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include respond(mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__overview {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @include respond(mobile) {
+      width: 100%;
+    }
+  }
+
+  &__active {
+    backface-visibility: hidden;
+    width: 40%;
+    opacity: 1;
+
+    .AcordeonCard__detail {
+      opacity: 1;
+    }
+
+    @include respond(tabletS) {
+      padding-left: 0;
+      width: 100%;
+    }
+
+    &--side {
+      opacity: 0.4;
+      width: 30%;
+
+      .AcordeonCard__detail {
+        transform: scale(0.7);
+      }
+
+      @include respond(tabletS) {
+        display: none;
+      }
+    }
+
+    &--left {
+      transform: rotateX(0deg) translateX(-50px) rotateY(50deg);
+
+      @include respond(tabletS) {
+        transform: unset;
+      }
+    }
+
+    &--right {
+      transform: rotateX(0deg) translateX(50px) rotateY(-50deg);
+
+      @include respond(tabletS) {
+        transform: unset;
+      }
+    }
+  }
+}

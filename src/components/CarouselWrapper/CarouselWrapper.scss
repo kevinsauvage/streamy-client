@@ -1,0 +1,9 @@
+@import "../../styles/mixins.scss";
+
+.CarouselWrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 150px 0;
+}

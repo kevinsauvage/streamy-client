@@ -1,0 +1,15 @@
+@import "../../styles/variable.scss";
+
+.Register {
+  min-height: 100vh;
+  &__alreadyMember {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    a {
+      &:hover {
+        color: $strong;
+      }
+    }
+  }
+}

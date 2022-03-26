@@ -1,0 +1,11 @@
+@import "../../styles/mixins.scss";
+
+.Page {
+  min-height: 100vh;
+  padding-bottom: 50px;
+  overflow: hidden;
+
+  @include respond(mobile) {
+    padding-top: 55px;
+  }
+}

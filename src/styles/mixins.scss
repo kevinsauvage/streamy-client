@@ -1,0 +1,123 @@
+@mixin fadeIn($duration) {
+  animation: fadeIn $duration ease forwards;
+}
+
+@mixin slideDow($duration, $delay) {
+  animation: slideDow $duration ease $delay forwards;
+}
+
+@mixin slideLeft($duration) {
+  animation: slideLeft $duration ease forwards;
+}
+
+@mixin scaleOnHover {
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDow {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+$smallMobile: 375px;
+$mobile: 600px;
+$tabletS: 820px;
+$tablet: 1194px;
+
+@mixin respond($media) {
+  @if $media==smallmobile {
+    @media (max-width: $smallMobile) {
+      @content;
+    }
+  } @else if $media==mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $media==tabletS {
+    @media (max-width: $tabletS) {
+      @content;
+    }
+  } @else if $media==tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  }
+}
+
+@mixin spin {
+  height: 100px;
+  width: 100px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top: 4px solid $strong;
+  -webkit-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+  }
+
+  &::before {
+    border-top-color: $light;
+    -webkit-animation: 3s spin linear infinite;
+    animation: 3s spin linear infinite;
+  }
+
+  &::after {
+    border-top-color: $tercary;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,9 @@
+@import '../../styles/mixins.scss';
+
+.Search {
+    padding-top: 1rem;
+
+    @include respond(mobile) {
+        padding-top: 60px;
+    }
+}

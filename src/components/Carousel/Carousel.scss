@@ -1,0 +1,60 @@
+@import "../../styles/variable.scss";
+@import "../../styles/mixins.scss";
+
+.Carousel {
+  position: relative;
+  width: 100%;
+
+  &__inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    opacity: 1;
+    transition: all 0.6s;
+    transform: scale(1);
+    height: 100%;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 99999999999;
+    border: 3px solid $strong;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    svg {
+      color: $strong;
+      font-size: 40px;
+    }
+
+    &--left {
+      left: -3rem;
+      @include respond(tabletS) {
+        left: 0;
+      }
+    }
+
+    &--right {
+      right: -2rem;
+      @include respond(tabletS) {
+        right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../styles/variable.scss";
+@import "../../styles/mixins.scss";
+
+.Form {
+  max-width: 700px;
+  width: 100%;
+  height: fit-content;
+  padding-top: 50px;
+  margin: 0 auto;
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    margin: 24px 0;
+  }
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  &__form {
+    &-btn {
+      background-color: $strong;
+      margin-top: 25px;
+      padding: 10px 30px;
+      cursor: pointer;
+      border: 0;
+      border-radius: 4px;
+      p {
+        font-weight: 700;
+        color: whitesmoke;
+      }
+    }
+  }
+  &__error {
+    color: red;
+    padding: 25px 0;
+    font-size: 18px;
+  }
+
+  &__loader {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+      @include spin;
+    }
+  }
+}

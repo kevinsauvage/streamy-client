@@ -1,0 +1,191 @@
+@import "../../styles/variable.scss";
+@import "../../styles/mixins.scss";
+
+.Header {
+  height: 70px;
+  background-color: $primary;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+  .Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+
+  &__logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-right: 2rem;
+  }
+
+  &__nav {
+    width: 100%;
+
+    @include respond(mobile) {
+      position: absolute;
+      top: calc(70px + 1rem);
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__listItem {
+    list-style: none;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $light;
+    font-size: 14px;
+    font-weight: 700;
+    transform-origin: center;
+
+    svg {
+      font-size: 20px;
+      margin-right: 10px;
+      @include respond(mobile) {
+        display: none;
+      }
+    }
+
+    @include respond(mobile) {
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__search {
+    margin-right: 1rem;
+    display: flex;
+    cursor: pointer;
+
+    svg {
+      font-size: 24px;
+    }
+  }
+
+  &__userAvatar {
+    background-color: $strong;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    cursor: pointer;
+    background-size: 300% 100%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+
+  &__userMenu {
+    z-index: 9999999999;
+    position: absolute;
+    background-color: $primary;
+    top: 45px;
+    right: 0;
+    width: fit-content;
+    border-radius: 4px;
+    border: 1px solid $strong;
+
+    &-list {
+      width: 100%;
+    }
+
+    &-listItem {
+      list-style: none;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 14px;
+
+      a {
+        padding: 1rem 2rem 1rem 1rem;
+        display: block;
+      }
+
+      &--logOut {
+        padding: 1rem 2rem 1rem 1rem;
+      }
+
+      &:hover {
+        background-color: $strong;
+      }
+    }
+  }
+
+  &__searchModal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(39, 40, 41, 0.86);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999999999;
+
+    &-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    &-input {
+      width: 100%;
+      border: 1px solid whitesmoke;
+      padding: 20px;
+      font-size: 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      padding-left: 39px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $primary;
+      cursor: pointer;
+      font-size: 40px;
+    }
+
+    &-close {
+      font-size: 40px;
+      color: whitesmoke;
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+      cursor: pointer;
+    }
+  }
+}

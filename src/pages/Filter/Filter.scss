@@ -1,0 +1,42 @@
+@import '../../styles/variable.scss';
+
+@import "../../styles/mixins.scss";
+
+.Filter {
+    padding: 50px 0;
+
+
+    &__filters {
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        width: 100%;
+
+    }
+
+    &__btn {
+        padding: 10px 20px;
+        background-color: $strong;
+        display: flex;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        border-radius: 5px;
+        cursor: pointer;
+
+        svg {
+            margin-right: 6px;
+            font-size: 20px;
+            color: $light;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 600;
+
+        }
+    }
+}

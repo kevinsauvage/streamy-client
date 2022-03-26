@@ -1,0 +1,218 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variable.scss";
+
+.Play {
+  &__banner {
+    position: relative;
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+
+  &__bannerImg {
+    padding: 100px 0 50px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(39, 40, 41);
+      background: linear-gradient(360deg, #272829 0%, #272829 12%, rgba(39, 40, 41, 0.9503550154) 21%, rgba(39, 40, 41, 0.7986696222) 33%, rgba(39, 40, 41, 0.5177707458) 47%, rgba(39, 40, 41, 0) 65%)
+    }
+  }
+
+  &__btnStart {
+    position: absolute;
+    left: 100px;
+    z-index: 29;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+
+    @include respond(tabletS) {
+      bottom: 2rem;
+      left: 2rem;
+    }
+
+    p {
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+
+  &__btnIcon {
+    border-radius: 50%;
+    background-color: $strong;
+    width: 80px;
+    height: 80px;
+    margin-right: 2rem;
+    font-size: 30px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    cursor: pointer;
+
+    svg {
+      fill: $light;
+    }
+  }
+
+  &__details {
+    padding: 50px 0px 0 0;
+    display: flex;
+    align-items: center;
+
+    @include respond(tabletS) {}
+
+    @include respond(mobile) {
+      padding: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__detail {
+    height: 100%;
+    padding-left: 30px;
+
+    @include respond(mobile) {
+      padding-left: unset;
+    }
+  }
+
+  &__detailsImg {
+    width: 100%;
+    max-width: 256px;
+    height: fit-content;
+    display: block;
+
+    @include respond(tablet) {
+      float: left;
+    }
+
+    @include respond(mobile) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 10px 0 20px 0;
+    font-weight: 700;
+    font-size: 40px;
+    color: #ffffff;
+    z-index: 9;
+    text-transform: uppercase;
+
+    @include respond(mobile) {
+      font-size: 25px;
+    }
+  }
+
+  &__row {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__overview {
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+
+  &__average {
+    span {
+      color: $strong;
+    }
+  }
+
+  &__type {
+    padding: 2px;
+    border: 1px solid $light;
+    width: fit-content;
+    border-radius: 4px;
+  }
+
+  &__genre {
+    border: 1px solid $strong;
+    padding: 2px;
+    border-radius: 4px;
+  }
+
+  &__btns {
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__btn {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: $strong;
+    display: flex;
+    align-items: center;
+    color: $light;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+
+    svg {
+      margin-right: 1rem;
+      font-size: 25px;
+    }
+  }
+
+  &__trailer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999999999999;
+    background: rgba(39, 40, 41, 0.95);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    @include fadeIn(0.2s);
+  }
+
+  &__closeTrailer {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    font-size: 50px;
+    color: $light;
+    cursor: pointer;
+  }
+}

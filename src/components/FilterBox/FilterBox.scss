@@ -1,0 +1,76 @@
+@import '../../styles/variable.scss';
+@import '../../styles/mixins.scss';
+
+.FilterBox {
+    width: fit-content;
+    height: 100%;
+
+
+    &__visible {
+        padding: 10px 20px;
+        background-color: $primary;
+        display: flex;
+        border: 1px solid $primary;
+
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        svg {
+            margin-right: 6px;
+            font-size: 20px;
+            color: $strong;
+        }
+
+        &--open {
+            border: 1px solid red;
+        }
+    }
+
+    &__dropBox {
+        position: absolute;
+        background-color: $primary;
+        z-index: 9999999999;
+        top: calc(100% + 10px);
+        border-radius: 5px;
+        padding: 10px 0;
+        border: 1px solid red;
+
+
+
+        @include respond(tabletS) {
+            width: 100%;
+            left: 0;
+        }
+    }
+
+    &__label {
+        opacity: 0.7;
+        font-size: 13px;
+        margin-right: 5px;
+        font-weight: 600;
+    }
+
+    &__list {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    &__listItem {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        white-space: nowrap;
+
+
+        input {
+            margin-right: 8px;
+        }
+    }
+}
