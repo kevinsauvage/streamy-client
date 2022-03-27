@@ -7,30 +7,15 @@
   position: relative;
   height: calc(100vh - 70px);
 
-  &--animate {
-    @include fadeIn(1s);
-  }
-
   @include respond(mobile) {
     height: 70vh;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background: rgba($secondary, 0.4);
   }
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
   }
 
   &__detail {
