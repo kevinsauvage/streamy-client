@@ -1,5 +1,5 @@
 const config = {
-  serverUrl: "https://streamy-v2-server.vercel.app/",
+  serverUrl: "https://ancient-fortress-34615.herokuapp.com/",
 };
 
 if (window.location.hostname === "localhost") {
