@@ -6,10 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   iframe {
     aspect-ratio: 16/9;
     width: 100%;
     max-width: 700px;
     @include slideDow(0.7s, 0.3s);
+    @include blackShadow;
+
   }
 }

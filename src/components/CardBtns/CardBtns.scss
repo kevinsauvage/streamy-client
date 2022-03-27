@@ -1,4 +1,5 @@
 @import '../../styles/variable.scss';
+@import '../../styles/mixins.scss';
 
 .CardBtns {
     margin-top: 15px;
@@ -17,7 +18,7 @@
         padding: 10px 15px;
         border: none;
         border-radius: 4px;
-        box-shadow: rgba($secondary, 0.35) 0px 5px 15px;
+        @include blackShadow;
         cursor: pointer;
         white-space: nowrap;
 

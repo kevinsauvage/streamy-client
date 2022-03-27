@@ -11,11 +11,10 @@
         background-color: $primary;
         display: flex;
         border: 1px solid $primary;
-
         align-items: center;
-        box-shadow: rgba($secondary, 0.35) 0px 5px 15px;
         border-radius: 5px;
         cursor: pointer;
+        @include blackShadow;
 
         svg {
             margin-right: 6px;

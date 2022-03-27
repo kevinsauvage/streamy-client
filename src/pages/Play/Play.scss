@@ -58,8 +58,7 @@
     height: 80px;
     margin-right: 2rem;
     font-size: 30px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    @include blackShadow;
     cursor: pointer;
 
     svg {
@@ -179,8 +178,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
+    @include blackShadow;
 
     svg {
       margin-right: 1rem;
@@ -201,10 +200,10 @@
     justify-content: center;
     z-index: 9999999999999;
     background: rgba(39, 40, 41, 0.95);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     @include fadeIn(0.2s);
+    @include blackShadow;
   }
 
   &__closeTrailer {

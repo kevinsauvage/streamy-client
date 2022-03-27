@@ -9,8 +9,8 @@
   transition: All 0.3s ease;
   transform-style: preserve-3d;
   opacity: 0;
-  box-shadow: rgba($secondary, 0.25) 0px 14px 28px, rgba($secondary, 0.22) 0px 10px 10px;
   transform: rotateX(0deg) translateX(0px) rotateY(0deg) scale(1);
+  @include blackShadow;
 
   &__img {
     display: block;

@@ -14,12 +14,14 @@
     text-align: center;
     margin: 24px 0;
   }
+
   &__subtitle {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 50px;
     text-align: center;
   }
+
   &__form {
     &-btn {
       background-color: $strong;
@@ -28,12 +30,15 @@
       cursor: pointer;
       border: 0;
       border-radius: 4px;
+      @include blackShadow;
+
       p {
         font-weight: 700;
         color: whitesmoke;
       }
     }
   }
+
   &__error {
     color: red;
     padding: 25px 0;
@@ -45,6 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     div {
       @include spin;
     }

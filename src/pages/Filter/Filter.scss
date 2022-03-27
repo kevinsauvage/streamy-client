@@ -22,10 +22,9 @@
         background-color: $strong;
         display: flex;
         align-items: center;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
         border-radius: 5px;
         cursor: pointer;
+        @include blackShadow;
 
         svg {
             margin-right: 6px;
