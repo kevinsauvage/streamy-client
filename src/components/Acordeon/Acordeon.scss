@@ -44,6 +44,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    min-height: 80vh;
   }
 
   &__arrow {
@@ -59,6 +60,7 @@
     @include respond(mobile) {
       transform: translateY(-85%);
     }
+
     &--previus {
       left: 1rem;
       width: 60px;
