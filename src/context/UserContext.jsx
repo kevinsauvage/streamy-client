@@ -17,9 +17,7 @@ export const UserProvider = (props) => {
     if (userMovies) setUserMovies(userMovies);
   }, []);
 
-  useEffect(() => {
-    getUserMovies();
-  }, [getUserMovies]);
+  useEffect(() => getUserMovies(), [getUserMovies]);
 
   const register = async (firstName, lastName, email, password) => {
     return await apiHelper(apiRoutes.users, { firstName, lastName, email, password });
@@ -37,13 +35,10 @@ export const UserProvider = (props) => {
 
   const addToMovieList = async (movie, type) => {
     const user = getItem("user");
-    const userMovies = user.savedMovies;
-
-    console.log(userMovies);
+    if (!user) return (window.location.pathname = "/login");
+    const userMovies = user?.savedMovies;
 
     const isSaved = userMovies.find((item) => item.movie.id === movie.id);
-
-    console.log(isSaved);
 
     if (isSaved) return;
 
@@ -51,10 +46,10 @@ export const UserProvider = (props) => {
 
     const res = await update(undefined, undefined, undefined, newMovies, user.id);
 
-    if (res.success) {
+    if (res && res.success) {
       getUserMovies();
 
-      return toast.success(`${movie.original_title} as correctly been added to your watch list`, {
+      return toast.success(`${movie.title} as correctly been added to your watch list`, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -69,27 +64,25 @@ export const UserProvider = (props) => {
 
   const removeFromMovieList = async (movie) => {
     const user = getItem("user");
-    const userMovies = user.savedMovies;
+
+    const userMovies = user?.savedMovies;
 
     const filtered = userMovies.filter((item) => item.movie.id !== movie.id);
 
     const res = await update(undefined, undefined, undefined, filtered, user.id);
 
-    if (res.success) {
+    if (res && res.success) {
       getUserMovies();
-      return toast.success(
-        `${movie.original_title} as correctly been deleted from your watch list`,
-        {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        }
-      );
+      return toast.success(`${movie.title} as correctly been deleted from your watch list`, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
   };
 

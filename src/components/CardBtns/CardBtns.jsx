@@ -20,12 +20,12 @@ const CardBtns = ({ movie, type }) => {
       {userMovies && movie && userMovies.map((item) => item.movie?.id).includes(movie.id) ? (
         <button className="CardBtns__btn" onClick={() => removeFromMovieList(movie)}>
           <MdRemoveCircleOutline />
-          Remove from watch list
+          watch list
         </button>
       ) : (
         <button className="CardBtns__btn" onClick={() => addToMovieList(movie, type)}>
           <IoMdAdd />
-          Add to watch List
+          watch List
         </button>
       )}
     </div>

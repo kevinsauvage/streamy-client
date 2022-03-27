@@ -38,13 +38,13 @@ const Play = () => {
 
     if (type === "movie") {
       apiHelper(requests.getMovieById.url.replace("{id}", id), null, "get").then((data) =>
-        setMovie(data.results)
+        setMovie(data)
       );
     }
 
     if (type === "show" || type === "tv") {
       apiHelper(requests.getShowById.url.replace("{id}", id), null, "get").then((data) =>
-        setMovie(data.results)
+        setMovie(data)
       );
     }
   }, [id, type]);
