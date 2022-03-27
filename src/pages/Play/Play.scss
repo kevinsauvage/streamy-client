@@ -27,8 +27,8 @@
       bottom: 0;
       width: 100%;
       height: 100%;
-      background: rgb(39, 40, 41);
-      background: linear-gradient(360deg, #272829 0%, #272829 12%, rgba(39, 40, 41, 0.9503550154) 21%, rgba(39, 40, 41, 0.7986696222) 33%, rgba(39, 40, 41, 0.5177707458) 47%, rgba(39, 40, 41, 0) 65%)
+      background: $secondary;
+      background: linear-gradient(360deg, $secondary 0%, $secondary 12%, rgba($secondary, 0.95) 21%, rgba($secondary, 0.7986696222) 33%, rgba($secondary, 0.5177707458) 47%, rgba($secondary, 0) 65%)
     }
   }
 

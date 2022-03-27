@@ -37,7 +37,8 @@
     cursor: pointer;
     z-index: 99999999999;
     border: 3px solid $strong;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba($secondary, 0.56) 0px 22px 70px 4px;
+
     svg {
       color: $strong;
       font-size: 40px;
@@ -45,6 +46,7 @@
 
     &--left {
       left: -3rem;
+
       @include respond(tabletS) {
         left: 0;
       }
@@ -52,6 +54,7 @@
 
     &--right {
       right: -2rem;
+
       @include respond(tabletS) {
         right: 0;
       }
