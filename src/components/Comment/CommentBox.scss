@@ -1,0 +1,35 @@
+@import '../../styles/variable.scss';
+@import '../../styles/mixins.scss';
+
+.CommentBox {
+    max-width: 700px;
+    width: 100%;
+    background-color: $primary;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    @include blackShadow;
+
+    &__name {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+    }
+
+    &__date {
+        font-size: 12px;
+        opacity: 0.6;
+
+    }
+
+    &__content {
+        padding: 1rem 0rem;
+        font-size: 14px;
+    }
+}

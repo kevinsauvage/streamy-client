@@ -1,0 +1,112 @@
+@import '../../styles/variable.scss';
+@import '../../styles/mixins.scss';
+
+.Comment {
+    &__banner {
+        width: 100%;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 70vh;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__form {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 10px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        background: rgba(32, 32, 32, 0.45);
+        backdrop-filter: blur(7.5px);
+        -webkit-backdrop-filter: blur(7.5px);
+        border-radius: 10px;
+        @include blackShadow;
+
+        @include respond(mobile) {
+            padding: 1rem 10px;
+        }
+
+
+        &-btn {
+            align-self: flex-end;
+            position: relative;
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            background-color: $strong;
+            display: flex;
+            align-items: center;
+            color: $light;
+            font-weight: 600;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            @include blackShadow;
+            white-space: nowrap;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+    }
+
+    &__textArea {
+        width: 100%;
+        height: 160px;
+        resize: none;
+        border-radius: 8px;
+        background-color: $secondary;
+        color: $light;
+        padding: 10px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+
+        &-container {
+            max-width: 700px;
+            width: 100%;
+            padding: 0 2rem;
+
+            @include respond(mobile) {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        &-btn {
+            background-color: $strong;
+            border: none;
+            padding: 6px;
+            border-radius: 6px;
+            color: $light;
+            @include blackShadow;
+            cursor: pointer;
+        }
+
+        &-num {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &--active {
+                text-decoration: underline;
+            }
+        }
+    }
+}

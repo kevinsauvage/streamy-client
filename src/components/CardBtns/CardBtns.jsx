@@ -11,10 +11,7 @@ const CardBtns = ({ movie, type }) => {
 
   return (
     <div className="CardBtns">
-      <Link
-        className="CardBtns__btn"
-        to={`/play/${movie?.id}`}
-        state={{ type: type || movie?.media_type }}>
+      <Link className="CardBtns__btn" to={`/play/${type || movie?.media_type}/${movie?.id}`}>
         <BsPlayFill /> See details
       </Link>
       {userMovies && movie && userMovies.map((item) => item.movie?.id).includes(movie.id) ? (

@@ -4,7 +4,7 @@ const Form = ({ children, title, subtitle, handleSubmit, btnText, error, loading
   return (
     <div className={`Form ${className ? className : ""}`}>
       <p className="Form__title">{title}</p>
-      <p className="Form__subtitle">{subtitle}</p>
+      {subtitle && <p className="Form__subtitle">{subtitle}</p>}
       <form action="submit" className="Form__form" onSubmit={handleSubmit}>
         {loading ? (
           <div className="Form__loader">

@@ -48,7 +48,7 @@ const MediumMovieCard = ({ movie, type }) => {
         />
       </div>
       <div className="MediumMovieCard__detail">
-        <Link to={`/play/${movie.id}`} state={{ type: type || movie?.media_type }}>
+        <Link to={`/play/${type || movie?.media_type}/${movie.id}`}>
           <p className="MediumMovieCard__title">
             {truncateString(
               movie?.title || movie?.original_title || movie?.original_name || "",

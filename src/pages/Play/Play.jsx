@@ -1,5 +1,5 @@
 import "./Play.scss";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { extractYearFromDate } from "../../helpers/extractYearFromDate";
@@ -20,18 +20,15 @@ import { MdRemoveCircleOutline } from "react-icons/md";
 import apiHelper from "../../helpers/apiHelper";
 
 const Play = () => {
-  const { id } = useParams();
-  const [type, setType] = useState();
+  const { id, type } = useParams();
   const [movie, setMovie] = useState();
-  const location = useLocation();
   const [similar, setSimilar] = useState([]);
   const [recommendation, setRecommendation] = useState([]);
   const [trailer, setTrailer] = useState();
+
   const { addToMovieList, removeFromMovieList, userMovies } = useContext(UserContext);
 
   useEffect(() => window.scrollTo(0, 0), [id]);
-
-  useEffect(() => setType(location?.state?.type), [location]);
 
   useEffect(() => {
     if (!id && !type) return;
@@ -161,9 +158,11 @@ const Play = () => {
                 Add to watch List
               </button>
             )}
-            <button className="Play__btn">
-              <FaPhotoVideo /> Comment movie
-            </button>
+            <Link to={`/play/${type}/${id}/comment`} state={{ type: type }}>
+              <button className="Play__btn">
+                <FaPhotoVideo /> Comment movie
+              </button>
+            </Link>
             <button className="Play__btn">
               <MdShare /> Share
             </button>

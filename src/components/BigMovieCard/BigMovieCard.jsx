@@ -20,17 +20,20 @@ const BigMovieCard = ({ movie, title, animate, type }) => {
       <div className="BigMovieCard__detail">
         <Container>
           <p className="BigMovieCard__title">{title}</p>
-          <Link to={`/play/${movie?.id}`} state={{ type: type || movie?.media_type }}>
+          <Link to={`/play/${type || movie?.media_type}/${movie?.id}`}>
             <h2 className="BigMovieCard__name">{movie?.original_title || movie?.original_name}</h2>
           </Link>
           <div className="BigMovieCard__row">
             <p className="BigMovieCard__date">
-              {extractYearFromDate(movie?.release_date) || extractYearFromDate(movie?.first_air_date)}{" "}
+              {extractYearFromDate(movie?.release_date) ||
+                extractYearFromDate(movie?.first_air_date)}{" "}
             </p>
             <div className="BigMovieCard__note">
               <span>{movie?.vote_average}</span> / 10
             </div>
-            <p className="BigMovieCard__type">{movie?.media_type === "tv" ? "show" : movie?.media_type}</p>
+            <p className="BigMovieCard__type">
+              {movie?.media_type === "tv" ? "show" : movie?.media_type}
+            </p>
           </div>
           <p className="BigMovieCard__overview">{movie && truncateString(movie?.overview, 200)}</p>
           <CardBtns movie={movie} type={movie?.media_type === "tv" ? "show" : movie?.media_type} />

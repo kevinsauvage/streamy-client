@@ -8,11 +8,11 @@ import FormRow from "../../layouts/formRow/FormRow";
 import Form from "../../layouts/Form/Form";
 import useForm from "../../hooks/useForm";
 import Page from "../../layouts/Page/Page";
-import { UserContext } from "../../context/UserContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Register = () => {
   const navigate = useNavigate();
-  const { register } = useContext(UserContext);
+  const { register } = useContext(AuthContext);
 
   const initialState = {
     firstName: "",
@@ -35,7 +35,7 @@ const Register = () => {
 
       if (res.success) return navigate("/login");
       else {
-        if (res.error.keyPattern.email) return setError("Email already registered.");
+        if (res.error?.keyPattern?.email) return setError("Email already registered.");
         else return setError("ESomething went wrong please try again.");
       }
     } catch (error) {

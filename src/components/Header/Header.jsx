@@ -10,6 +10,8 @@ import { stopScroll, unstopScroll } from "../../helpers/scroll";
 import { MdFilterList, MdOutlineHome } from "react-icons/md";
 import { BiCameraMovie, BiSlideshow } from "react-icons/bi";
 import useClickOutside from "../../hooks/useClickOutside";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 const Header = () => {
   const [displaySearch, setDisplaySearch] = useState(false);
@@ -17,6 +19,7 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [displayUserMenu, setDisplayUserMenu] = useState(false);
   const userMenuRef = useRef(null);
+  const { handleLogOut } = useContext(UserContext);
 
   useClickOutside(userMenuRef, () => setDisplayUserMenu(false));
 
@@ -36,12 +39,6 @@ const Header = () => {
     if (displaySearch) stopScroll();
     else unstopScroll();
   }, [displaySearch]);
-
-  const handleLogOut = () => {
-    window.sessionStorage.removeItem("user_token");
-    window.sessionStorage.removeItem("user");
-    navigate("/login");
-  };
 
   return (
     <div className="Header">
@@ -93,7 +90,7 @@ const Header = () => {
             {displayUserMenu && (
               <nav className="Header__userMenu">
                 <ul className="Header__userMenu-list">
-                  {getItem("user_token") ? (
+                  {getItem("user_token_streamy") ? (
                     <>
                       <li className="Header__userMenu-listItem">
                         <Link to={"/account"}>ACCOUNT</Link>

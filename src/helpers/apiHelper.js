@@ -1,5 +1,7 @@
+import { getItem } from "./sessionStorage";
+
 const apiHelper = async (url, data = {}, method = "POST") => {
-  let bearer = "Bearer " + localStorage.getItem("user_token");
+  let bearer = "Bearer " + getItem("user_token_streamy");
 
   const object = {
     method: method,

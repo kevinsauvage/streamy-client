@@ -27,7 +27,7 @@ const AcordeonCard = ({ movie, active, activeLeft, activeRight, type }) => {
         loading="lazy"
       />
       <div className="AcordeonCard__detail">
-        <Link to={`/play/${movie.id}`} state={{ type: type || movie?.media_type }}>
+        <Link to={`/play/${type || movie?.media_type}/${movie.id}`}>
           <h6 className="AcordeonCard__title">
             {movie?.title || movie?.original_title || movie?.original_name}
           </h6>
