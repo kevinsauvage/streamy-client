@@ -108,7 +108,7 @@ const Play = () => {
           <div className="Play__details">
             <img
               className="Play__detailsImg"
-              src={movie?.poster_path ? `${image.url.w342}${movie?.poster_path}` : PlaceholderImage}
+              src={movie?.poster_path ? `${image.url.w500}${movie?.poster_path}` : PlaceholderImage}
               alt={movie?.original_title || movie?.original_name}
               width="185"
               height="278"
