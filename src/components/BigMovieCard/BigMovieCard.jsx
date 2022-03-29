@@ -11,7 +11,7 @@ const BigMovieCard = ({ movie, title, animate, type }) => {
     <div className={animate ? "BigMovieCard BigMovieCard--animate" : "BigMovieCard"}>
       <img
         className="BigMovieCard__img"
-        src={`${window.innerWidth < 800 ? image.url.w500 : image.url.w1280}${movie?.backdrop_path}`}
+        src={`${window.innerWidth < 500 ? image.url.w780 : image.url.w1280}${movie?.backdrop_path}`}
         alt={movie?.original_title || movie?.original_name}
         width="2000"
         height="1125"

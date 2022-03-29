@@ -6,7 +6,6 @@ import { extractYearFromDate } from "../../helpers/extractYearFromDate";
 import { BsPlayFill } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
 import { FaPhotoVideo } from "react-icons/fa";
-import { MdShare } from "react-icons/md";
 import requests, { image } from "../../helpers/requests";
 import PlaceholderImage from "../../images/placeholder.png";
 import Container from "../../layouts/Container/Container";
@@ -114,58 +113,64 @@ const Play = () => {
               width="185"
               height="278"
             />
-            <div className="Play__detail">
-              <h6 className="Play__title">
-                {movie?.name || movie?.original_title || movie?.original_name}
-              </h6>
-              <div className="Play__row">
-                <p className="Play__release">
-                  {extractYearFromDate(movie?.release_date) ||
-                    extractYearFromDate(movie?.first_air_date)}
-                </p>
-                <p className="Play__average">
-                  <span>{movie?.vote_average}</span> / 10
-                </p>
-                {(movie?.media_type || type) && (
-                  <p className="Play__type">
-                    {movie?.media_type === "tv" ? "show" : type ? type : movie?.media_type}
-                  </p>
-                )}
-                {movie?.genres &&
-                  movie.genres.map((item, i) => (
-                    <p key={i} className="Play__genre">
-                      {item.name}
-                    </p>
-                  ))}
-              </div>
-              <p className="Play__overview">{movie?.overview}</p>
-              <CreditBox credits={movie?.credits} />
-            </div>
-          </div>
-          <div className="Play__btns">
-            <button className="Play__btn" onClick={playTrailer}>
-              <BsPlayFill /> Play Trailer
-            </button>
 
-            {userMovies && movie && userMovies.map((item) => item.movie?.id).includes(movie.id) ? (
-              <button className="Play__btn" onClick={() => removeFromMovieList(movie)}>
-                <MdRemoveCircleOutline />
-                Remove from watch list
-              </button>
-            ) : (
-              <button className="Play__btn" onClick={() => addToMovieList(movie, type)}>
-                <IoMdAdd />
-                Add to watch List
-              </button>
-            )}
-            <Link to={`/play/${type}/${id}/comment`} state={{ type: type }}>
-              <button className="Play__btn">
-                <FaPhotoVideo /> Comment movie
-              </button>
-            </Link>
-            <button className="Play__btn">
-              <MdShare /> Share
-            </button>
+            <div className="Play__detail">
+              <div className="Play__detail-wrapper">
+                <h6 className="Play__title">
+                  {movie?.name || movie?.original_title || movie?.original_name}
+                </h6>
+                <p className="Play__tagline">
+                  <i>{movie?.tagline}</i>
+                </p>
+                <div className="Play__row">
+                  <p className="Play__release">
+                    {extractYearFromDate(movie?.release_date) ||
+                      extractYearFromDate(movie?.first_air_date)}
+                  </p>
+                  <p className="Play__average">
+                    <span>{movie?.vote_average}</span> / 10
+                  </p>
+                  {(movie?.media_type || type) && (
+                    <p className="Play__type">
+                      {movie?.media_type === "tv" ? "show" : type ? type : movie?.media_type}
+                    </p>
+                  )}
+                  {movie?.genres &&
+                    movie.genres.map((item, i) => (
+                      <p key={i} className="Play__genre">
+                        {item.name}
+                      </p>
+                    ))}
+                </div>
+                <p className="Play__overview">{movie?.overview}</p>
+                <CreditBox credits={movie?.credits} />
+              </div>
+
+              <div className="Play__btns">
+                <button className="Play__btn" onClick={playTrailer}>
+                  <BsPlayFill /> Play Trailer
+                </button>
+
+                {userMovies &&
+                movie &&
+                userMovies.map((item) => item.movie?.id).includes(movie.id) ? (
+                  <button className="Play__btn" onClick={() => removeFromMovieList(movie)}>
+                    <MdRemoveCircleOutline />
+                    watch list
+                  </button>
+                ) : (
+                  <button className="Play__btn" onClick={() => addToMovieList(movie, type)}>
+                    <IoMdAdd />
+                    watch List
+                  </button>
+                )}
+                <Link to={`/play/${type}/${id}/comment`} state={{ type: type }}>
+                  <button className="Play__btn">
+                    <FaPhotoVideo /> Comments
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
           <div>
             {similar.length > 0 && (

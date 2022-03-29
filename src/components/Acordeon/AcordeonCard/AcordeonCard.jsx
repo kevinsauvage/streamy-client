@@ -17,9 +17,9 @@ const AcordeonCard = ({ movie, active, activeLeft, activeRight, type }) => {
       <img
         className="AcordeonCard__img"
         src={
-          window.innerWidth < 820
-            ? `${image.url.w342}${movie?.poster_path}`
-            : `${image.url.w500}${movie?.poster_path}`
+          window.innerWidth < 400
+            ? `${image.url.w500}${movie?.poster_path}`
+            : `${image.url.w780}${movie?.poster_path}`
         }
         alt={movie?.name || movie?.original_title || movie?.original_name}
         width="500"

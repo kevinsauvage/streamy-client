@@ -5,7 +5,7 @@
   padding-bottom: 50px;
   overflow: hidden;
 
-  @include respond(mobile) {
+  @include respond(tabletS) {
     padding-top: 55px;
   }
 }

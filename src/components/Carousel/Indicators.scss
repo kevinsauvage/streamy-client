@@ -12,6 +12,10 @@
   justify-content: center;
   width: 100%;
 
+  @include respond(tabletS) {
+    bottom: -50px;
+  }
+
   &__outer {
     cursor: pointer;
     display: block;

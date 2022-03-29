@@ -7,7 +7,15 @@ import { useRef, useState, useEffect } from "react";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { getItem } from "../../helpers/sessionStorage";
 import { stopScroll, unstopScroll } from "../../helpers/scroll";
-import { MdFilterList, MdOutlineHome } from "react-icons/md";
+import {
+  MdFilterList,
+  MdOutlineHome,
+  MdOutlineAccountCircle,
+  MdOutlineMovieFilter,
+  MdLogout,
+  MdLogin,
+  MdAppRegistration,
+} from "react-icons/md";
 import { BiCameraMovie, BiSlideshow } from "react-icons/bi";
 import useClickOutside from "../../hooks/useClickOutside";
 import { UserContext } from "../../context/UserContext";
@@ -93,24 +101,36 @@ const Header = () => {
                   {getItem("user_token_streamy") ? (
                     <>
                       <li className="Header__userMenu-listItem">
-                        <Link to={"/account"}>ACCOUNT</Link>
+                        <Link to={"/account"}>
+                          <MdOutlineAccountCircle />
+                          ACCOUNT
+                        </Link>
                       </li>
                       <li className="Header__userMenu-listItem">
-                        <Link to={"/list"}>MY LIST</Link>
+                        <Link to={"/list"}>
+                          <MdOutlineMovieFilter />
+                          MY LIST
+                        </Link>
                       </li>
                       <li
                         className="Header__userMenu-listItem Header__userMenu-listItem--logOut"
                         onClick={handleLogOut}>
-                        LOGOUT
+                        <MdLogout /> LOGOUT
                       </li>
                     </>
                   ) : (
                     <>
                       <li className="Header__userMenu-listItem">
-                        <Link to={"/register"}>REGISTER</Link>
+                        <Link to={"/register"}>
+                          <MdAppRegistration />
+                          REGISTER
+                        </Link>
                       </li>
                       <li className="Header__userMenu-listItem">
-                        <Link to={"/login"}>LOGIN</Link>
+                        <Link to={"/login"}>
+                          <MdLogin />
+                          LOGIN
+                        </Link>
                       </li>
                     </>
                   )}

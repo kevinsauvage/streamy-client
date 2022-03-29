@@ -29,7 +29,10 @@
       top: unset;
       bottom: 1rem;
       transform: unset;
-      min-height: 364px;
+    }
+
+    @include respond(mobile) {
+      bottom: 0rem;
     }
   }
 

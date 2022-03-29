@@ -2,7 +2,6 @@
 
 .Acordeon {
   position: relative;
-  min-height: 90vh;
   padding: 60px 0 0 0;
   transform-origin: center;
   width: 100%;
@@ -44,7 +43,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    min-height: 90vh;
     margin-top: 90px;
   }
 
