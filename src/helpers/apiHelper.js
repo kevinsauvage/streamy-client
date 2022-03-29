@@ -17,7 +17,6 @@ const apiHelper = async (url, data = {}, method = "POST") => {
   try {
     const res = await fetch(url, object);
     const result = await res.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.log(error);
