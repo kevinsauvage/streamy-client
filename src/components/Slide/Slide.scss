@@ -23,14 +23,16 @@
     bottom: 0;
     height: 100%;
     z-index: 999999999;
-    background-color: $primary;
-    opacity: 0.6;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 60px;
     background: transparent;
     cursor: pointer;
+
+    svg {
+      color: $strong;
+    }
 
     @include respond(tabletS) {
       height: fit-content;

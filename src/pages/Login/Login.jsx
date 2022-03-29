@@ -61,7 +61,7 @@ const Login = () => {
       <Container>
         <Form
           title="Welcome Back !"
-          subtitle="Have fun watching your favorite movies and tv shows."
+          subtitle="Have fun finding your favorite movies and tv shows."
           handleSubmit={handleSubmit}
           error={error}
           loading={loading}
