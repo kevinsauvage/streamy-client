@@ -1,9 +1,12 @@
 ## Streamy 
 
 > Description
+
 Streamy is here to help you find movie and show that you may like, watch trailer, add them to your watch list, read and add comments.
 
 > Technologies
+
+
 React.js | SASS | Express.js | Mongoose | TMDB API | JWT
 
 > Carousel 
