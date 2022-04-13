@@ -29,7 +29,7 @@ kevinsauvage@outlook.com
 
 ## Link
 
-Project Link: (https://streamy.fun/)
+Project Link: [Streamy.fun](https://streamy.fun/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
