@@ -1,13 +1,25 @@
 ## Streamy 
 
-> Description
+## About The Project
+
+![Streamy2](https://user-images.githubusercontent.com/64160579/161816019-39e83deb-0b8b-41eb-9baf-9b79717a0e42.png)
 
 Streamy is here to help you find movie and show that you may like, watch trailer, add them to your watch list, read and add comments.
 
-> Technologies
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
-React.js | SASS | Express.js | Mongoose | TMDB API | JWT
+### Built With
+
+* [Next.js](https://nextjs.org/)
+* [Express.js](https://expressjs.com/)
+* [Mongoose](https://mongoosejs.com/)
+* [JWT](https://github.com/auth0/node-jsonwebtoken#readme)
+* 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 > Carousel 
 
@@ -31,7 +43,7 @@ React.js | SASS | Express.js | Mongoose | TMDB API | JWT
 
 > Home banner
 
-![Streamy2](https://user-images.githubusercontent.com/64160579/161816019-39e83deb-0b8b-41eb-9baf-9b79717a0e42.png)
+
 
 > User watch list
 
