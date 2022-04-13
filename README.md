@@ -20,6 +20,19 @@ Streamy is here to help you find movie and show that you may like, watch trailer
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- CONTACT -->
+## Contact
+
+kevinsauvage@outlook.com
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Link
+
+Project Link: (https://streamy.fun/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 > Carousel 
 
