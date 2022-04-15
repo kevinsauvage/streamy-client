@@ -12,7 +12,7 @@ Streamy is here to help you find movie and show that you may like, watch trailer
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
+* [React.js](https://reactjs.org/)
 * [Express.js](https://expressjs.com/)
 * [Mongoose](https://mongoosejs.com/)
 * [JWT](https://github.com/auth0/node-jsonwebtoken#readme)
