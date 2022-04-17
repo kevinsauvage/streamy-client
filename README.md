@@ -31,7 +31,7 @@ kevinsauvage@outlook.com
 
 [Project link](https://streamy.fun/)
 
-[Server code](https://github.com/kevinsauvage/streamyV2-server)
+[Server code](https://github.com/kevinsauvage/streamy-server)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
