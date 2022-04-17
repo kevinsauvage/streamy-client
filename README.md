@@ -1,4 +1,5 @@
 <div id="top"></div>
+# Streamy client
 
 ## About The Project
 
@@ -13,10 +14,8 @@ Streamy is here to help you find movie and show that you may like, watch trailer
 ### Built With
 
 * [React.js](https://reactjs.org/)
-* [Express.js](https://expressjs.com/)
-* [Mongoose](https://mongoosejs.com/)
-* [JWT](https://github.com/auth0/node-jsonwebtoken#readme)
-
+* [SASS](https://sass-lang.com/)
+* [React router](https://reactrouter.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -29,7 +28,8 @@ kevinsauvage@outlook.com
 
 ## Link
 
-Project Link: [Streamy.fun](https://streamy.fun/)
+[Project link](https://streamy.fun/)
+[Server code](https://github.com/kevinsauvage/streamyV2-server)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
